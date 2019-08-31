@@ -43,4 +43,6 @@ dependencies {
     testImplementation SharedTestLibs.espresso
     testImplementation SharedTestLibs.mockk
     testImplementation UnitTestLib.robolectric
+
+    implementation project(path: ':commonui')
 }
