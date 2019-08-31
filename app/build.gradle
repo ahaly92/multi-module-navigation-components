@@ -1,0 +1,53 @@
+apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+
+android {
+    compileSdkVersion SharedConfig.compileSDK
+    defaultConfig {
+        applicationId "com.united.mobile.android.navigation"
+        minSdkVersion SharedConfig.minSDK
+        targetSdkVersion SharedConfig.targetSDK
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_CONSOLE", "true"
+        }
+
+        release {
+            buildConfigField "boolean", "LOG_CONSOLE", "false"
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation Kotlin.jvm
+    implementation Kotlin.core
+
+    implementation Navigation.fragment
+    implementation Navigation.navigationUI
+
+    implementation Misc.material
+    implementation Misc.appCompat
+    implementation Misc.constraintLayout
+
+    testImplementation SharedTestLibs.junit
+    testImplementation SharedTestLibs.junitKtx
+    testImplementation SharedTestLibs.coreTesting
+    testImplementation SharedTestLibs.espresso
+    testImplementation SharedTestLibs.mockk
+    testImplementation UnitTestLib.robolectric
+
+    implementation project(path: ':commonui')
+    implementation project(path: ':login')
+}

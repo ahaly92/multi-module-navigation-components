@@ -1,0 +1,72 @@
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion SharedConfig.compileSDK
+    defaultConfig {
+        minSdkVersion SharedConfig.minSDK
+        targetSdkVersion SharedConfig.targetSDK
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_CONSOLE", "true"
+        }
+
+        release {
+            buildConfigField "boolean", "LOG_CONSOLE", "false"
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    resourcePrefix 'common_ui_'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Kotlin.jvm
+    implementation Kotlin.core
+
+    implementation Lifecycle.extension
+    implementation Lifecycle.viewModel
+    implementation Lifecycle.liveData
+    kapt Lifecycle.lifecycleCompiler
+
+    implementation Misc.material
+    implementation Misc.appCompat
+    implementation Misc.constraintLayout
+    implementation Misc.cardView
+    implementation Misc.recyclerView
+    implementation Misc.annotation
+
+    implementation Navigation.fragment
+    implementation Navigation.navigationUI
+
+    implementation Coroutine.coroutinesAndroid
+    implementation Coroutine.coroutinesCore
+
+    testImplementation SharedTestLibs.junit
+    testImplementation SharedTestLibs.junitKtx
+    testImplementation SharedTestLibs.coreTesting
+    testImplementation SharedTestLibs.espresso
+    testImplementation SharedTestLibs.mockk
+    testImplementation UnitTestLib.robolectric
+    testImplementation UnitTestLib.coroutinesTest
+
+    androidTestImplementation SharedTestLibs.espresso
+    androidTestImplementation SharedTestLibs.junitKtx
+    androidTestImplementation SharedTestLibs.testCore
+    androidTestImplementation SharedTestLibs.testRule
+
+    debugImplementation SharedTestLibs.fragmentTest
+    debugImplementation SharedTestLibs.testCore
+}

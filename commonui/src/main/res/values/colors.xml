@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_ui_color_primary">@color/common_ui_blue</color>
+    <color name="common_ui_color_primary_dark">@color/common_ui_steel_blue</color>
+    <color name="common_ui_color_accent">@color/common_ui_green</color>
+
+    <!-- colors definitions -->
+    <color name="common_ui_blue">#0033A0</color>
+    <color name="common_ui_steel_blue">#006080</color>
+    <color name="common_ui_green">#1B7742</color>
+
+</resources>

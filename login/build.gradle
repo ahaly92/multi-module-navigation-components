@@ -1,0 +1,46 @@
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+
+android {
+    compileSdkVersion SharedConfig.compileSDK
+    defaultConfig {
+        minSdkVersion SharedConfig.minSDK
+        targetSdkVersion SharedConfig.targetSDK
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_CONSOLE", "true"
+        }
+
+        release {
+            buildConfigField "boolean", "LOG_CONSOLE", "false"
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    resourcePrefix 'login_'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Kotlin.jvm
+    implementation Kotlin.core
+
+    implementation Misc.appCompat
+
+    testImplementation SharedTestLibs.junit
+    testImplementation SharedTestLibs.junitKtx
+    testImplementation SharedTestLibs.coreTesting
+    testImplementation SharedTestLibs.espresso
+    testImplementation SharedTestLibs.mockk
+    testImplementation UnitTestLib.robolectric
+}
