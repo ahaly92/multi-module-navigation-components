@@ -1,9 +1,9 @@
-package com.navigation.mobile.android.navigation.screen.main
+package com.navigation.mobile.android.navigation
 
 import android.os.Bundle
 import android.view.View
-import com.navigation.mobile.android.navigation.R
 import com.navigation.mobile.navigation.commonui.base.BaseFragment
+import kotlinx.android.synthetic.main.main_fragment.main_navigateToLoginBtn
 
 class MainFragment : BaseFragment() {
     override val layoutResourceId: Int = R.layout.main_fragment
@@ -16,7 +16,11 @@ class MainFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         configureViewModel()
-        viewModel.navigateToLogin()
+        configureUIListeners()
+    }
+
+    private fun configureUIListeners() {
+        main_navigateToLoginBtn.setOnClickListener { viewModel.navigateToLogin() }
     }
 
     private fun configureViewModel() {
