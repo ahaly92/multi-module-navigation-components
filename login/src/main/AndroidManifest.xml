@@ -1,3 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.united.mobile.android.login"
-    />
+<manifest package="com.navigation.mobile.android.login" />

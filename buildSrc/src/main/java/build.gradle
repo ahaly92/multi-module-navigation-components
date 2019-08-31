@@ -33,11 +33,6 @@ ext {
             coroutinesCore   : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     ]
 
-    ArtifactoryConfig = [
-            mainUrl  : "https://artifactory.ual.com/artifactory/UnitedMobileTeam-Gradle/",
-            pluginUrl: "https://artifactory.ual.com/artifactory/plugins-releases"
-    ]
-
     Lifecycle = [
             extension        : "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion",
             viewModel        : "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion",

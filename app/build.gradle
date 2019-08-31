@@ -5,7 +5,7 @@ apply plugin: "kotlin-android-extensions"
 android {
     compileSdkVersion SharedConfig.compileSDK
     defaultConfig {
-        applicationId "com.united.mobile.android.navigation"
+        applicationId "com.navigation.mobile.android.navigation"
         minSdkVersion SharedConfig.minSDK
         targetSdkVersion SharedConfig.targetSDK
         versionCode 1
@@ -49,5 +49,4 @@ dependencies {
     testImplementation UnitTestLib.robolectric
 
     implementation project(path: ':commonui')
-    implementation project(path: ':login')
 }
