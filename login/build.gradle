@@ -32,10 +32,16 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation Kotlin.jvm
     implementation Kotlin.core
 
+    implementation Navigation.fragment
+    implementation Navigation.navigationUI
+
+    implementation Misc.material
     implementation Misc.appCompat
+    implementation Misc.constraintLayout
 
     testImplementation SharedTestLibs.junit
     testImplementation SharedTestLibs.junitKtx

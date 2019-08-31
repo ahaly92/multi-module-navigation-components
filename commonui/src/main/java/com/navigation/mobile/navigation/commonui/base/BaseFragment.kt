@@ -5,9 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
+import com.navigation.mobile.navigation.commonui.navigation.LiveNavigationField
+import com.navigation.mobile.navigation.commonui.navigation.NavigationEvent
 
 abstract class BaseFragment : Fragment() {
     /**
@@ -25,7 +29,6 @@ abstract class BaseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(layoutResourceId, container, false)
 
-
     /**
      * Fragment extension function for obtaining an [instance] of the view model through ViewModelProviders
      */
@@ -37,5 +40,16 @@ abstract class BaseFragment : Fragment() {
             }
         }
         return ViewModelProviders.of(this, factory).get(V::class.java)
+    }
+
+    /**
+     * Sets up the fragment to listen for navigation events from [navigationLiveDataField]
+     */
+    protected fun configureNavigationListener(navigationLiveDataField: LiveNavigationField<NavigationEvent>) {
+        navigationLiveDataField.observe(viewLifecycleOwner, Observer { navigate(it) })
+    }
+
+    private fun navigate(event: NavigationEvent) {
+        findNavController().navigate(event.navId, event.argumentsBundle())
     }
 }

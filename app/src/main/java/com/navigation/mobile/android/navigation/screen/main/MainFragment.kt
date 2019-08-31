@@ -1,29 +1,25 @@
-package com.navigation.mobile.android.screens.main
+package com.navigation.mobile.android.navigation.screen.main
 
 import android.os.Bundle
 import android.view.View
-import com.navigation.mobile.android.login.R
+import com.navigation.mobile.android.navigation.R
 import com.navigation.mobile.navigation.commonui.base.BaseFragment
 
-class LoginFragment : BaseFragment() {
-    override val layoutResourceId: Int = R.layout.login_fragment_main
+class MainFragment : BaseFragment() {
+    override val layoutResourceId: Int = R.layout.main_fragment
 
     private val viewModel by lazy {
         obtainViewModel {
-            LoginViewModel()
+            MainViewModel()
         }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         configureViewModel()
-        configureUIListeners()
-    }
-
-    private fun configureUIListeners() {
-
+        viewModel.navigateToLogin()
     }
 
     private fun configureViewModel() {
-
+        configureNavigationListener(viewModel.navigationLiveDataField)
     }
 }

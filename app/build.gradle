@@ -49,4 +49,5 @@ dependencies {
     testImplementation UnitTestLib.robolectric
 
     implementation project(path: ':commonui')
+    implementation project(path: ':login')
 }

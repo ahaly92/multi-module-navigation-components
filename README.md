@@ -1,2 +1,1 @@
-# multi-module-navigation-components
-Multi-Module navigation using navigation components
+# Multi-Module Navigation Using MVVM + Navigation Components
