@@ -1,4 +1,4 @@
-package com.navigation.mobile.android.screens.main
+package com.navigation.mobile.android.screen.main
 
 import com.navigation.mobile.android.login.R
 import com.navigation.mobile.navigation.commonui.navigation.NavigationDestination

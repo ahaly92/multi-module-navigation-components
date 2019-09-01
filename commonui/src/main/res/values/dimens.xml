@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Margin/Padding-->
+    <dimen name="common_ui_spacing_xsm">4dp</dimen>
+    <dimen name="common_ui_spacing_sm">8dp</dimen>
+    <dimen name="common_ui_spacing_md">16dp</dimen>
+    <dimen name="common_ui_spacing_lg">32dp</dimen>
+    <dimen name="common_ui_spacing_xlg">60dp</dimen>
+</resources>

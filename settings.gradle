@@ -1,2 +1,2 @@
-include ':app', ':login', ':commonui'
+include ':app', ':login', ':commonui', ':core'
 rootProject.name = 'Navigation'

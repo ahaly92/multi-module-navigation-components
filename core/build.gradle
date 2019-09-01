@@ -1,6 +1,7 @@
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
+apply plugin: "kotlin-kapt"
 
 android {
     compileSdkVersion SharedConfig.compileSDK
@@ -9,6 +10,7 @@ android {
         targetSdkVersion SharedConfig.targetSDK
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -22,12 +24,6 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
-
-    androidExtensions {
-        experimental = true
-    }
-
-    resourcePrefix 'login_'
 }
 
 dependencies {
@@ -36,20 +32,4 @@ dependencies {
     implementation Kotlin.jvm
     implementation Kotlin.core
 
-    implementation Navigation.fragment
-    implementation Navigation.navigationUI
-
-    implementation Misc.material
-    implementation Misc.appCompat
-    implementation Misc.constraintLayout
-
-    testImplementation SharedTestLibs.junit
-    testImplementation SharedTestLibs.junitKtx
-    testImplementation SharedTestLibs.coreTesting
-    testImplementation SharedTestLibs.espresso
-    testImplementation SharedTestLibs.mockk
-    testImplementation UnitTestLib.robolectric
-
-    implementation project(path: ':commonui')
-    implementation project(path: ':core')
 }

@@ -3,10 +3,15 @@
     <color name="common_ui_color_primary">@color/common_ui_blue</color>
     <color name="common_ui_color_primary_dark">@color/common_ui_steel_blue</color>
     <color name="common_ui_color_accent">@color/common_ui_green</color>
+    <color name="common_ui_primary_button_pressed">@color/common_ui_purple</color>
 
     <!-- colors definitions -->
     <color name="common_ui_blue">#0033A0</color>
     <color name="common_ui_steel_blue">#006080</color>
     <color name="common_ui_green">#1B7742</color>
-
+    <color name="common_ui_purple">#412D7D</color>
+    <color name="common_ui_neutral_white">#FFFFFF</color>
+    <color name="common_ui_premium_purple">#572C5F</color>
+    <color name="common_ui_runway_gray">#D4D4D0</color>
+    <color name="common_ui_atlantic_amethyst">#6244BB</color>
 </resources>
